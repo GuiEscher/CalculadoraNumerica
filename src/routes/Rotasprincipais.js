@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import Newton from '../screens/Newton';
+import Splash from '../screens/Splash';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,10 +21,9 @@ export default function Rotasprincipais(){
    // const navigation = useNavigation()
     
     return(
-        <NavigationContainer
-        independent = {true}
-        >
+        <NavigationContainer >
             <Stack.Navigator initialRouteName = "Splash">
+                <Stack.Screen name = "Splash" component = {Splash} options={{headerShown:false}}/>
                 <Stack.Screen name = "Newton" component = {Newton} options={{headerShown:false}}/>
 
 

@@ -43,6 +43,9 @@ import * as math from 'mathjs';
       try {
         const symbol = math.parse(inputValue); // criar o nó de símbolo
         const derivate = math.derivative(symbol, 'x'); // derivar o nó em relação a x
+
+        //Add um vetor para armazenar o valor de cada uma das 10 iterações e exibir na tela. **************
+
         while (aux != 10) {
           const f = symbol.compile(); // compilar o nó
           let resNormal = f.evaluate({ x: x0 });
@@ -56,6 +59,7 @@ import * as math from 'mathjs';
           x0 = result;
         }
         setResult(result);
+        return result;
       } catch (err) {
         console.log('Error in newton function' + err);
       } finally {
